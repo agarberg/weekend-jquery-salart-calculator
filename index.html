@@ -25,7 +25,6 @@
     <label id="empId" for="empid"></label>
     <input type="text" id="empid name="empid" placeholder="Employee Id">
     <!-- Job Title input  -->
-    <label id="title" for="title"></label>
     <input type="text" id="title" name="title" placeholder="Job Title">
     <!-- Annual Salary input -->
     <label id="salary" for="salary"></label>
@@ -35,23 +34,29 @@
     <button id="submitButton" type="button">Submit</button>
   
     <table style="width:100%">
+     <thead>
         <tr>
           <th>First Name</th>
           <th>Last Name</th>
           <th>ID</th>
           <th>Title</th>
           <th>Job Title</th>
+          <th>Annual Salary</th>
+          <!-- Delete button goes under here -->
+          <th></th>
         </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Centro comercial Moctezuma</td>
-          <td>Francisco Chang</td>
-          <td>Mexico</td>
-        </tr>
+     </thead>
+     <tbody> 
+        <tr id= "firstNameRow"></tr>
+        <tr id= "lastNameRow"></tr>
+        <tr id= "inNumRow"></tr>
+        <tr id= "empTitleRow"></tr>
+        <tr id= "annSalaryRow"></tr>
+        <tr id = "delete"></tr>
+    </tbody>
+    <tfoot>
+
+    </tfoot>
       </table>
 
   
