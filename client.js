@@ -1,42 +1,44 @@
-$(document).ready(readyNow);
+let employeeArray = [];
 
-function readyNow(){
-    console.log('JqueryWorks');
-    $('#submitButton').on('click',(submitButton));
+function newEmployee(fNameInput, lNameInput, empIdInput, jobTitleInput, annSalaryInput){ 
+    console.log('in new employee');
+const employeeObj = {
+    firstName: fNameInput,
+    lastName: lNameInput,
+    employeeId: empIdInput,
+    employeeTitle: jobTitleInput,
+    employeeSalary: annSalaryInput,
 }
-    function submitButton(){
+employeeArray.push(employeeObj);
+return true;
+}
+
+$(document).ready(submit)
+function submit() {
+$('#submitButton').on('click',(submitButton));
+}
     //gather input values 
-    let firstName = $('#fName').val();
-    let lastName = $('#lName').val();
-    let employeeId= $('#empId').val();
-    let employeeTitle= $('#title').val();
-    let employeeSalary= $('#salary').val();
+    function submitButton() {
+        let firstName = $('#fNameInput').val(); 
+        let lastName = $('#lNameInput').val();
+        let employeeId= $('#empIdInput').val()
+        let employeeTitle= $('#jobTitleInput').val()
+        let employeeSalary= $('#annSalaryInput').val()
+        newEmployee (firstName, lastName, employeeId, employeeTitle, employeeSalary)
+    $('#firstNameRow').append(`<tr><td>${firstName}</td></tr>`);
+    $('#lastNameRow').append(`<tr><td>${lastName}</td></tr>`);
+    $('#empIdRow').append(`<tr><td>${employeeId}</td></tr>`);
+    $('#empTitleRow').append(`<tr><td>${employeeTitle}</td></tr>`);
+    $('#annSalaryRow').append(`<tr><td>${employeeSalary}</td></tr>`);
+    }
+
+    // console.log(firstName);
+    // console.log(lastName);
+    // console.log(employeeId);
+    // console.log(employeeTitle);
+    // console.log(employeeSalary);
     
     
-}
 
 
-
-
-
-
-function submit(){
-    //gather input values
-    let year =$('#yearInput').val();
-    let make =$('#makeInput').val();
-    let model =$('#modelInput').val();
-    //send values to newCar function
-    newCar ( year, make, model );
-    //append new car values to unordered list
-      $('#garageList').append(`<li>${year} ${make} ${model}</li>`);
-
-
-      function submit(){
-        //gather input values
-        let year =$('#yearInput').val();
-        let make =$('#makeInput').val();
-        let model =$('#modelInput').val();
-        //send values to newCar function
-        newCar ( year, make, model );
-        //append new car values to unordered list
-          $('#garageList').append(`<li>${year} ${make} ${model}</li>`);
+// console.log(employeeArray)

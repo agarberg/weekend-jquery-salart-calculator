@@ -15,20 +15,16 @@
 
 
     <!-- First Name input -->
-
-    <label id="fName" for="fname"></label>
-    <input type="text" id="fname" name="fname" placeholder="First Name">
-    <!-- Last Name input -->
-    <label id="lName" for="lname"></label>
-    <input type="text" id="lname" name="lname" placeholder="Last Name">
+    <input placeholder="First Name" id="fNameInput"/>
+        <!-- Last Name input -->
+    <input placeholder="Last Name" id="lNameInput"/>
     <!-- Employee ID input  -->
-    <label id="empId" for="empid"></label>
-    <input type="text" id="empid name="empid" placeholder="Employee Id">
+    <input placeholder="Employee ID" id="empIdInput"/>
     <!-- Job Title input  -->
-    <input type="text" id="title" name="title" placeholder="Job Title">
+    <input placeholder="Job Title" id="jobTitleInput"/>
     <!-- Annual Salary input -->
-    <label id="salary" for="salary"></label>
-    <input type="text" id="salary" name="salary" placeholder="Salary"><br>
+    <input placeholder="Annual Salary" id="annSalaryInput"/><br>
+
       <!-- A 'Submit' button should collect the form information, store the information to calculate monthly costs, 
   append information to the DOM and clear the input fields.  -->
     <button id="submitButton" type="button">Submit</button>
@@ -39,20 +35,21 @@
           <th>First Name</th>
           <th>Last Name</th>
           <th>ID</th>
-          <th>Title</th>
           <th>Job Title</th>
           <th>Annual Salary</th>
           <!-- Delete button goes under here -->
-          <th></th>
+          <th><button id="deleteButton" type="button">Delete</button></th>
         </tr>
      </thead>
      <tbody> 
-        <tr id= "firstNameRow"></tr>
-        <tr id= "lastNameRow"></tr>
-        <tr id= "inNumRow"></tr>
-        <tr id= "empTitleRow"></tr>
-        <tr id= "annSalaryRow"></tr>
-        <tr id = "delete"></tr>
+       <tr>
+        <td id= "firstNameRow"></td>
+        <td id= "lastNameRow"></td>
+        <td id= "empIdRow"></td>
+        <td id= "empTitleRow"></td>
+        <td id= "annSalaryRow"></td>
+        <td id= "delete"></td>
+      </tr>
     </tbody>
     <tfoot>
 
