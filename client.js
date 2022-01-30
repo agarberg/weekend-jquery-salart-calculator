@@ -12,7 +12,6 @@ const employeeObj = {
 employeeArray.push(employeeObj);
 totalMonthlyCostAdder()
 console.log(employeeArray);
-
 }
 
 $(document).ready(submit)
@@ -36,10 +35,16 @@ $('#submitButton').on('click',(submitButton));
     $('#empTitleRow').append(`<tr><td>${employeeTitle}</td></tr>`);
     $('#annSalaryRow').append(`<tr><td>${employeeSalary}</td></tr>`);
     $('#delete').append('<tr><td><button id="deleteButton" type="button">Delete</button></td></tr>');
-    $('#deleteButton').on('click', (deleteClick)); 
+    $('#tableBody').on('click', '#deleteButton', deleteClick); 
     }
     function deleteClick(){
-        
+        console.log(this);
+        $(this).remove();
+        // $('#lastNameRow').remove()
+        // $('#empIdRow').remove()
+        // $('#empTitleRow').remove()
+        // $('#annSalaryRow').remove()
+        // $('#deleteButton').remove()
     }
 
 
@@ -52,29 +57,9 @@ $('#submitButton').on('click',(submitButton));
         console.log(totalMonthlyCost);
         $('#total').text(`${totalMonthlyCost}`);
         if (totalMonthlyCost >= 20000) {
-            $('#goRed').css('background-color', 'red')
+            $('#goRed').css('background-color', 'red') 
         }
     
     }
 
-    
-
-    
- 
-
-    // function deleteClick(){
-    //     console.log('in delete click');
-        
-    //     console.log('what is', this);
-        
-    //     $(this).remove()
-
-
-        // $('#firstNameRow').val();
-        // $('#lastNameRow').val();
-        // $('#empIdRow').val();
-        // $('#empTitleRow').val();
-        // $('#annSalaryRow').val();
-        // $('#delete').val(); 
-    // }
 

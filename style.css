@@ -7,3 +7,10 @@ table, th, td {
     empty-cells: show;
     background-color: ;
   }
+#goRed {
+    text-align: right;
+}
+#subButton{
+    display: flex;
+    justify-content: flex-end;
+}
