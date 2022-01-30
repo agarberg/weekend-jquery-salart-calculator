@@ -36,7 +36,10 @@ $('#submitButton').on('click',(submitButton));
     $('#empTitleRow').append(`<tr><td>${employeeTitle}</td></tr>`);
     $('#annSalaryRow').append(`<tr><td>${employeeSalary}</td></tr>`);
     $('#delete').append('<tr><td><button id="deleteButton" type="button">Delete</button></td></tr>');
-    // $('#deleteButton').on('click', (deleteClick));    
+    $('#deleteButton').on('click', (deleteClick)); 
+    }
+    function deleteClick(){
+        
     }
 
 
@@ -44,12 +47,15 @@ $('#submitButton').on('click',(submitButton));
         console.log('in total monthly cost adder');
         let totalMonthlyCost = 0;
         for (let i = 0; i < employeeArray.length; i++){
-            totalMonthlyCost += Number(employeeArray[i].salary); 
+            totalMonthlyCost += Number(employeeArray[i].salary)/ 12; 
         }     
         console.log(totalMonthlyCost);
         $('#total').text(`${totalMonthlyCost}`);
+        if (totalMonthlyCost >= 20000) {
+            $('#goRed').css('background-color', 'red')
+        }
+    
     }
-        
 
     
 
@@ -71,12 +77,4 @@ $('#submitButton').on('click',(submitButton));
         // $('#annSalaryRow').val();
         // $('#delete').val(); 
     // }
-
-// let sum = 0;
-//   function sumScores(array){
-//     for (let i = 0; i < array.length; i++){
-//       sum += array[i].score;
-//     }
-//     return sum;
-//   }
 
