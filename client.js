@@ -1,5 +1,7 @@
+//initialize empty array for storing employees
 let employeeArray = [];
 
+// start newEmployee function to take inputs and create object and send to array
 function newEmployee(fNameInput, lNameInput, empIdInput, jobTitleInput, annSalaryInput){ 
     console.log('in new employee', fNameInput, lNameInput, empIdInput, jobTitleInput, annSalaryInput);
 const employeeObj = {
@@ -10,16 +12,15 @@ const employeeObj = {
     salary: annSalaryInput,
 }
 employeeArray.push(employeeObj);
-totalMonthlyCostAdder()
+totalMonthlyCostAdder();
 console.log(employeeArray);
 }
-
+//start Jquery and activate submit button
 $(document).ready(submit)
 function submit() {
 $('#submitButton').on('click',(submitButton));
-
 }
-    //gather input values 
+    //gather input values function
     function submitButton() {
         let firstName = $('#fNameInput').val(); 
         let lastName = $('#lNameInput').val();
@@ -27,7 +28,7 @@ $('#submitButton').on('click',(submitButton));
         let employeeTitle= $('#jobTitleInput').val();
         let employeeSalary= $('#annSalaryInput').val();
         newEmployee (firstName, lastName, employeeId, employeeTitle, employeeSalary);
-       
+     //append values to DOM
 
     $('#firstNameRow').append(`<tr><td>${firstName}</td></tr>`);
     $('#lastNameRow').append(`<tr><td>${lastName}</td></tr>`);
@@ -35,11 +36,12 @@ $('#submitButton').on('click',(submitButton));
     $('#empTitleRow').append(`<tr><td>${employeeTitle}</td></tr>`);
     $('#annSalaryRow').append(`<tr><td>${employeeSalary}</td></tr>`);
     $('#delete').append('<tr><td><button id="deleteButton" type="button">Delete</button></td></tr>');
-    $('#tableBody').on('click', '#deleteButton', deleteClick); 
+    $('#tableData').on('click', '#deleteButton', deleteClick); 
     }
+    //attempt to delete one row, 
     function deleteClick(){
         console.log(this);
-        $(this).remove();
+        $(this).parents('tr').remove(); 
         // $('#lastNameRow').remove()
         // $('#empIdRow').remove()
         // $('#empTitleRow').remove()
@@ -47,7 +49,7 @@ $('#submitButton').on('click',(submitButton));
         // $('#deleteButton').remove()
     }
 
-
+    // add up employee salaries and divide to monthly 
     function totalMonthlyCostAdder(){
         console.log('in total monthly cost adder');
         let totalMonthlyCost = 0;
@@ -59,7 +61,6 @@ $('#submitButton').on('click',(submitButton));
         if (totalMonthlyCost >= 20000) {
             $('#goRed').css('background-color', 'red') 
         }
-    
     }
 
 

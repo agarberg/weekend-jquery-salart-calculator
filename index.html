@@ -28,7 +28,7 @@
       <!-- A 'Submit' button should collect the form information, store the information to calculate monthly costs, 
   append information to the DOM and clear the input fields.  -->
    <div id= subButton><button id="submitButton" type="button">Submit</button></div>
-  
+    <!-- Create table -->
     <table style="width:100%">
      <thead>
         <tr>
@@ -42,7 +42,7 @@
         </tr>
      </thead>
      <tbody id= "tableBody"> 
-       <tr id= "tableData">
+        <tr id= "tableData">
         <td id= "firstNameRow"></td>
         <td id= "lastNameRow"></td>
         <td id= "empIdRow"></td>
@@ -51,18 +51,7 @@
         <td id= "delete"></td>
       </tr>
     </tbody>
-    <tfoot>
-
-    </tfoot>
-      </table>
-
+    <!-- show monthy cost -->
       <h4 id= "goRed">Total Monthly: $ <span id="total"></span> </h4> 
-
-  
-
-
-  <!-- Using the stored information, calculate monthly costs and append this to the to DOM. 
-  If the total monthly cost exceeds $20,000, add a red background color to the total monthly cost. -->
-
     </body>
 </html>
