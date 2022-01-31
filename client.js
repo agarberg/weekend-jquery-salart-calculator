@@ -28,6 +28,11 @@ $('#submitButton').on('click',(submitButton));
         let employeeTitle= $('#jobTitleInput').val();
         let employeeSalary= $('#annSalaryInput').val();
         newEmployee (firstName, lastName, employeeId, employeeTitle, employeeSalary);
+        $('#fNameInput').val(''); 
+        $('#lNameInput').val('');
+        $('#empIdInput').val('');
+        $('#jobTitleInput').val('');
+        $('#annSalaryInput').val('');
      //append values to DOM
 
     $('#firstNameRow').append(`<tr><td>${firstName}</td></tr>`);
